@@ -1,9 +1,9 @@
-import Card from './Card';
-
+import Card from '../Card/Card.jsx';
+import { CardsContainer } from './styledComponents.js';
 
 function Cards({characters, onClose}) {
    return(
-      <div>
+      <CardsContainer>
       {
          characters.map(({id, name, status, species, gender, image, origin}) => {
             return (
@@ -21,7 +21,7 @@ function Cards({characters, onClose}) {
             )
          })
       }
-      </div>
+      </CardsContainer>
    )
 }
 

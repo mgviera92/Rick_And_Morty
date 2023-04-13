@@ -1,0 +1,13 @@
+.app {
+   text-align: center;
+   background-color: #fda403;
+}
+
+.nav {
+   background-color: #c51350;
+   padding: 1em;
+   display: flex;
+   flex-direction: row;
+   justify-content: end;
+   margin-bottom: 1em;
+}
