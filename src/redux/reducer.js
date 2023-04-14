@@ -24,7 +24,6 @@ const reducer =  (state = initialState, action) => {
             const personajesFiltrados = state.allCharactersFav.filter(character => character.gender === action.payload)
             return {
                 ...state,
-                    
                 myFavorites: 
                 action.payload === 'allCharacters'
                 ? [...state.allCharactersFav]

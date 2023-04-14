@@ -1,4 +1,3 @@
-// import './App.css';
 import Cards from './components/Cards/Cards';
 import Nav from './components/Nav/Nav';
 import { useState, useEffect } from 'react';
@@ -56,8 +55,8 @@ function App() {
    return (
       <div className= {style.app}>
          <div className = {style.nav}>
-         </div>
          {location.pathname === '/' ? <Form login = {login}/> : <Nav onSearch = {onSearch}/>}
+         </div>
          <Routes>
             <Route path = '/home' element = {<Cards characters={characters} onClose = {onClose}/>}/>
             <Route path = '/about' element = {<About/>}/>

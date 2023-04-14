@@ -37,8 +37,9 @@ const handleSubmit = (event) => {
 
 
     return (
-        //envolver con un div para dar estilo en conjunto
+        <div className= {style.login}>
         <form onSubmit = {handleSubmit} className = {style.form}>
+            <img src = 'https://wallpapercave.com/dwp1x/wp4945619.jpg' alt = 'rym' className={style.img}/>
             <label htmlFor= 'email'>Email</label>
             <input
             type = 'text' 
@@ -61,6 +62,7 @@ const handleSubmit = (event) => {
             <button onClick = {handleSubmit}>Submit</button>
             
         </form>
+        </div>
     )
 } 
 
