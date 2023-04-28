@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+.app {
+   font-family: 'Kanit', sans-serif;
+   text-align: center;
+   background-color: #fda403;
+   padding-bottom: 4.8em;
+}
+
+.nav {
+   background-color: #c51350;
+   padding: 1em;
+   /* flex-direction: row; */
+   /* justify-content: end; */
+   /* margin-bottom: 1em; */
+}
