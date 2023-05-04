@@ -1,8 +1,8 @@
 import axios from "axios";
-import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./action-types";
+import { ADD_FAV, REMOVE_FAV, FILTER, ORDER, LOGIN } from "./action-types";
 
-export const addFav = (character) => {
-    const endpoint = 'http://localhost:3001/rickandmorty/fav';
+export const addFav = (character, idUser) => {
+    const endpoint = `http://localhost:3001/rickandmorty/fav?idUser=${idUser}`;
     return async (dispatch) => {
       try {
          const { data } = await axios.post(endpoint, character);
@@ -19,8 +19,8 @@ export const addFav = (character) => {
     };
  };
 
- export const removeFav = (id) => {
-    const endpoint = `http://localhost:3001/rickandmorty/fav/${id}`;
+ export const removeFav = (id, idUser) => {
+    const endpoint = `http://localhost:3001/rickandmorty/fav/${id}?idUser=${idUser}`;
     return async (dispatch) => {
       try {
          const { data } = await axios.delete(endpoint);
@@ -39,8 +39,22 @@ export const addFav = (character) => {
 
 export const filterCards = (gender) => {
     return { type: FILTER, payload: gender }
-}
+};
 
 export const orderCards = (order) => {
     return { type: ORDER, payload: order }
+};
+
+export function login(email, password) {
+   return async function (dispatch) {
+      try {
+         const obj = await fetch(
+            `http://localhost:3001/login?email=${email}&password=${password}`
+         ).then((response) => response.json());
+
+         if (obj.access) dispatch({ type: LOGIN, payload: obj.id });
+      } catch (error) {
+         console.log(error);
+      }
+   };
 }

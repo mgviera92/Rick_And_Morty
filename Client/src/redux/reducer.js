@@ -1,6 +1,7 @@
-import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./action-types";
+import { ADD_FAV, REMOVE_FAV, FILTER, ORDER, LOGIN } from "./action-types";
 
 const initialState = {
+    idUser: 0,
     myFavorites: [],
     allCharactersFav : []
 }
@@ -40,6 +41,12 @@ const reducer =  (state = initialState, { type, payload }) => {
                     ? allCharactersFavCopia.sort((a, b) => a.id - b.id)
                     : allCharactersFavCopia.sort((a, b) => b.id - a.id)
             }
+
+        case LOGIN:
+            return  {
+                ...state,
+                idUser: payload
+            };
 
         default:
             return {...state}
